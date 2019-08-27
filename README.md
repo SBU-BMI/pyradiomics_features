@@ -1,4 +1,4 @@
-# radiomics_features
+# pyradiomics_features
    A docker version of pyradiomics feature pipeline, which generates patch level pyradiomics feature dataset and image level
 aggregational result. It also create histogram plot and percentile plot for each pyradiomics feature; 
 
