@@ -1,0 +1,6 @@
+geojson
+pymongo
+shapely
+openslide-python
+opencv-python
+pandas
