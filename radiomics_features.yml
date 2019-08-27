@@ -1,0 +1,21 @@
+version: '3'
+
+services:           
+  radiomics-core:
+    build: ./      
+    container_name: "radiomics-core"
+    restart: unless-stopped
+    volumes:      
+      - ./image_files/:/image_files/
+      - ./segment_results/:/segment_results/  
+      - ./tumor_region/:/tumor_region/
+      - ./output/:/output/
+    environment:
+      - IMAGE_FORMAT=svs
+      - PATCH_SIZE=500  
+      - HAS_TUMOR_REGION=yes    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10" 
