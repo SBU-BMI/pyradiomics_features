@@ -2,11 +2,11 @@
    A docker version of pyradiomics feature pipeline, which generates patch level pyradiomics feature dataset and image level
 aggregational result. It also create histogram plot and percentile plot for each pyradiomics feature; 
 
-  This develop branch code base uses one docker container.
+  This master branch code base uses one docker container.
 
 Step 1: Clone source code from github:
 ```
-git clone -b develop https://github.com/SBU-BMI/pyradiomics_features.git
+git clone https://github.com/SBU-BMI/pyradiomics_features.git
 ```
 
 Step 2: CD to ./pyradiomics_features/ folder
