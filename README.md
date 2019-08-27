@@ -6,7 +6,7 @@ aggregational result. It also create histogram plot and percentile plot for each
 
 Step 1: Clone source code from github:
 ```
-git clone https://github.com/SBU-BMI/pyradiomics_features.git
+git clone -b develop https://github.com/SBU-BMI/pyradiomics_features.git
 ```
 
 Step 2: CD to ./pyradiomics_features/ folder
@@ -29,26 +29,26 @@ Step 5: Run docker container in ./pyradiomics_features/ folder
   ```
 Step 6: Copy image svs or tif file to ./pyradiomics_features/image_files/ folder;
 
-Step 7: Copy  segmentation results to ./radiomics_features/segment_results/ folder; First create subfolder under  /radiomics_features/segment_results folder using image file name without extension; for example, 
+Step 7: Copy  segmentation results to ./pyradiomics_features/segment_results/ folder; First create subfolder under  /pyradiomics_features/segment_results folder using image file name without extension; for example, 
   if image name is my_image_name.svs, then subfolder name should be my_image_name.
   Create subfolder for each image, then copy segment results (json and csv pair files) to each subfolder.
 
-Step 8: if applicable, copy tumor region json file to ./radiomics_features/tumor_region/ folder;
+Step 8: if applicable, copy tumor region json file to ./pyradiomics_features/tumor_region/ folder;
 
 Step 9: Execute docker container
 ```
-docker exec radiomics-core  /app/computing_patch_level_radiomics_features.sh
+docker exec radiomics-core  /app/computing_patch_level_pyradiomics_features.sh
 ```
 Step 10; verify results. All results are in ./pyradiomics_features/output/ folder. There should be four subfolders available after complete running, named "patch_level_csv", "patch_level_plot","image_level_csv","image_level_plot" .etc.
 
 Step 11: Stop docker container  in ./pyradiomics_features/ folder
 ```
-docker-compose -f radiomics_features.yml down
+docker-compose -f pyradiomics_features.yml down
 ```
 
 Step 12: Remove docker images if necessary
 ```
-docker rmi radiomics_features_radiomics-core
+docker rmi pyradiomics_features_radiomics-core
 ```
 
 Step 13: Remove all unused volumes if necessary
