@@ -1,0 +1,11 @@
+firstorder:Energy
+firstorder:Entropy
+firstorder:10Percentile
+firstorder:90Percentile
+firstorder:Maximum
+firstorder:Mean
+firstorder:Median
+firstorder:RootMeanSquared
+firstorder:Kurtosis
+glcm:Autocorrelation
+glcm:Correlation
