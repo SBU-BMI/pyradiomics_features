@@ -6,12 +6,12 @@ aggregational result. It also create histogram plot and percentile plot for each
 
 Step 1: Clone source code from github:
 ```
-git clone -b develop https://github.com/SBU-BMI/radiomics_features.git
+git clone https://github.com/SBU-BMI/pyradiomics_features.git
 ```
 
-Step 2: CD to ./radiomics_features/ folder
+Step 2: CD to ./pyradiomics_features/ folder
 
-Step 3: Edit radiomics_features.yml of parameters IMAGE_FORMAT, PATCH_SIZE and HAS_TUMOR_REGION; The value of IMAGE_FORMAT could be svs and tif; The value of HAS_TUMOR_REGION could be yes and no; 
+Step 3: Edit pyradiomics_features.yml of parameters IMAGE_FORMAT, PATCH_SIZE and HAS_TUMOR_REGION; The value of IMAGE_FORMAT could be svs and tif; The value of HAS_TUMOR_REGION could be yes and no; 
 
 environment:
 
@@ -19,15 +19,15 @@ environment:
       - PATCH_SIZE=500 
       - HAS_TUMOR_REGION=yes
       
-Step 4: Build docker image in ./radiomics_features/ folder 
+Step 4: Build docker image in ./pyradiomics_features/ folder 
 ```
- docker-compose -f radiomics_features.yml build
+ docker-compose -f pyradiomics_features.yml build
 ```
-Step 5: Run docker container in ./radiomics_features/ folder
+Step 5: Run docker container in ./pyradiomics_features/ folder
   ```
-  docker-compose -f radiomics_features.yml up -d
+  docker-compose -f pyradiomics_features.yml up -d
   ```
-Step 6: Copy image svs or tif file to ./radiomics_features/image_files/ folder;
+Step 6: Copy image svs or tif file to ./pyradiomics_features/image_files/ folder;
 
 Step 7: Copy  segmentation results to ./radiomics_features/segment_results/ folder; First create subfolder under  /radiomics_features/segment_results folder using image file name without extension; for example, 
   if image name is my_image_name.svs, then subfolder name should be my_image_name.
@@ -39,9 +39,9 @@ Step 9: Execute docker container
 ```
 docker exec radiomics-core  /app/computing_patch_level_radiomics_features.sh
 ```
-Step 10; verify results. All results are in ./radiomics_features/output/ folder. There should be four subfolders available after complete running, named "patch_level_csv", "patch_level_plot","image_level_csv","image_level_plot" .etc.
+Step 10; verify results. All results are in ./pyradiomics_features/output/ folder. There should be four subfolders available after complete running, named "patch_level_csv", "patch_level_plot","image_level_csv","image_level_plot" .etc.
 
-Step 11: Stop docker container  in ./radiomics_features/ folder
+Step 11: Stop docker container  in ./pyradiomics_features/ folder
 ```
 docker-compose -f radiomics_features.yml down
 ```
