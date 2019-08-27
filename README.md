@@ -37,7 +37,7 @@ Step 8: if applicable, copy tumor region json file to ./pyradiomics_features/tum
 
 Step 9: Execute docker container
 ```
-docker exec radiomics-core  /app/computing_patch_level_pyradiomics_features.sh
+docker exec radiomics-core  /app/computing_patch_level_radiomics_features.sh
 ```
 Step 10; verify results. All results are in ./pyradiomics_features/output/ folder. There should be four subfolders available after complete running, named "patch_level_csv", "patch_level_plot","image_level_csv","image_level_plot" .etc.
 
