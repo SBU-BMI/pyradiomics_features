@@ -309,12 +309,7 @@ if __name__ == '__main__':
   image_list=[];
   file_end="";
   IMAGE_FORMAT=IMAGE_FORMAT.replace("'", "");  
-  if IMAGE_FORMAT == "svs":
-    file_end=".svs";
-  elif IMAGE_FORMAT == "tif":
-    file_end =".tif";
-  else:
-    file_end=".svs";  
+  file_end='.'+str(IMAGE_FORMAT);
   
   imagefile_list = [f for f in os.listdir(imagefiles_path) if f.endswith(file_end)] ;   
   for filename in imagefile_list:    
