@@ -17,7 +17,9 @@ import operator
 def generate_Patch_Level_Radiomics_Feature_Plots(feature_array):      
   for case_id in os.listdir(patch_level_csv_folder):
     case_id_folder=os.path.join(patch_level_csv_folder, case_id);
-    csv_file=os.path.join(case_id_folder, 'patch_level_radiomics_features.csv');       
+    csv_file=os.path.join(case_id_folder, 'patch_level_radiomics_features.csv');  
+    if not os.path.isfile(csv_file):
+      continue;
     picture_folder = os.path.join(patch_level_plot_folder, case_id); 
     if not os.path.exists(picture_folder):
       print ('%s folder do not exist, then create it.' % picture_folder);
