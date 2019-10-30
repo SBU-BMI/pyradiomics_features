@@ -156,6 +156,8 @@ def generate_image_level_radiomics_feature_csv_file(feature_array):
   for case_id in os.listdir(patch_level_csv_folder):
     case_id_folder=os.path.join(patch_level_csv_folder, case_id);
     csv_file=os.path.join(case_id_folder, 'patch_level_radiomics_features.csv');
+    if not os.path.isfile(csv_file):
+      continue;
     file_name="image_level_radiomics_feature_"+case_id+".csv";
     print ("create file "+str(file_name));
     is_new_file=False;    
