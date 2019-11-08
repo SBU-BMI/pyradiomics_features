@@ -228,7 +228,7 @@ def generate_image_level_nuclei_ratio_csv_file():
       case_id_folder=os.path.join(patch_level_csv_folder, case_id);
       csv_file=os.path.join(case_id_folder, 'patch_level_radiomics_features.csv');  
       if not os.path.isfile(csv_file):
-      continue;
+        continue;
       total_nuclei_area_micro=0.0;
       total_tumor_area_micro=0.0;
       total_patch_area_micro=0.0;  
