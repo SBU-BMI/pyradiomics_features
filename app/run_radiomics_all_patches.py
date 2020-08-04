@@ -514,7 +514,8 @@ if __name__ == "__main__":
   image_file_format=image_file_format.replace("'", "");
   file_end='.'+str(image_file_format);  
   imageFileName=imagefiles_path + '/'+str(case_id)+file_end       
-  segmentResultPath=segment_results_path + '/'+str(case_id)+'/';
+  #segmentResultPath=segment_results_path + '/'+str(case_id)+'/';
+  segmentResultPath=segment_results_path + '/'+str(case_id)+ file_end +'/';
   #print(image_file_format,file_end,case_id,imageFileName);
   
   csv_folder = os.path.join(output_path, 'patch_level_csv'); 
