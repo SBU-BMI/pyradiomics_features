@@ -2,7 +2,7 @@ version: '3'
 
 services:           
   radiomics-core:
-    build: ./      
+    image: sbubmi/radiomics_core:latest      
     container_name: "radiomics-core"
     restart: unless-stopped
     volumes:      
