@@ -24,7 +24,7 @@ RUN pip3.7 install wheel>=0.29.0 && \
     python3.7 -c "import SimpleITK; print('SimpleITK Version:' + SimpleITK.Version_VersionString())"
 
 # install pyradiomics package   
-RUN python3.7 -m pip install pyradiomics
+RUN python3.7 -m pip install -v pyradiomics==2.2.0
 
 RUN chmod 755 /app/computing_patch_level_radiomics_features.sh
 
